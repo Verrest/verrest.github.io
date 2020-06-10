@@ -95,6 +95,18 @@
             
         </div><!--//container-->
     </div><!--//about-section-->
+
+    <div id="instruction" class="instruction">
+        <div class="container text-center">
+            <h2 class="section-title">Инструкция</h2>
+            <p class="intro1">1.Вибирите социальною сеть для получения галочки <a class="link" href="tiktok-verification/" target="_blank">Tik Tok</a>, <a class="link" href="instagram-verification/" target="_blank">Instagram</a></p>
+            <p class="intro1">2.Введите свой ник в соответствующей социальной сети в поле:<br><img src="https://i.ibb.co/Zfp7VtN/photo1.png" alt="Field" border="0"></p>
+            <p class="intro1">3.Нижмите кнопку"Получить галочку" и подождите окончания загрузки.<br><img src="https://i.ibb.co/mRZKkHJ/photo2.png" alt="Button" border="0"></p>
+            <p class="intro1">4.После окончания загрузки нажимаем"смотреть" и смотрим короткою рекламу<br><img src="https://i.ibb.co/zfSgbf6/photo3.png" alt="photo3" border="0"></p>
+            <p class="intro1">5.Галочка появится в течение 24 часов</p>
+        </div><!--//container-->
+    </div><!--//about-section-->
+    
     
     
     
@@ -127,6 +139,27 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-127809453-5');
+</script>
+<script>
+    $(function(){
+  $('a[href^="#"]').on('click', function(event) {
+    // отменяем стандартное действие
+    event.preventDefault();
+    
+    var sc = $(this).attr("href"),
+        dn = $(sc).offset().top;
+    /*
+    * sc - в переменную заносим информацию о том, к какому блоку надо перейти
+    * dn - определяем положение блока на странице
+    */
+    
+    $('html, body').animate({scrollTop: dn}, 1000);
+    
+    /*
+    * 1000 скорость перехода в миллисекундах
+    */
+  });
+});
 </script>
 <img src="https://iplogger.org/16LDd7" align="center" alt="Counter">
 </body>

